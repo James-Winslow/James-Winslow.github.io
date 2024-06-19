@@ -1,48 +1,48 @@
 # Theme Settings
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "default" # Change this to any skin you prefer
 
 # Site Settings
-locale                   : "en-US"
-title                    : "James Winslow's Portfolio"
-title_separator          : "-"
-subtitle                 : "Data Scientist"
-name                     : "James Winslow"
-description              : "A Data Scientist with a passion for solving complex problems using data-driven approaches."
-url                      : "https://james-winslow.github.io" # the base hostname & protocol for your site
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "james-winslow/James-Winslow.github.io" # GitHub username/repo-name
-teaser                   : "/assets/images/500x300.png" # path of fallback teaser image
-logo                     : "/assets/images/logo.png" # path of logo image to display in the masthead
-masthead_title           : "James Winslow" # overrides the website title displayed in the masthead
-breadcrumbs              : true # true, false (default)
-words_per_minute         : 200
-enable_copy_code_button  : true # true, false (default)
-copyright                : "James Winslow"
-copyright_url            : "https://james-winslow.github.io"
+locale: "en-US"
+title: "James Winslow's Portfolio"
+title_separator: "-"
+subtitle: "Data Scientist"
+name: "James Winslow"
+description: "A Data Scientist with a passion for solving complex problems using data-driven approaches."
+url: "https://james-winslow.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. "/blog"
+repository: "james-winslow/James-Winslow.github.io" # GitHub username/repo-name
+teaser: "/assets/images/teaser.png" # path of fallback teaser image
+logo: "/assets/images/logo.png" # path of logo image to display in the masthead
+masthead_title: "James Winslow" # overrides the website title displayed in the masthead
+breadcrumbs: true # true, false (default)
+words_per_minute: 200
+enable_copy_code_button: true # true, false (default)
+copyright: "James Winslow"
+copyright_url: "https://james-winslow.github.io"
 
 # Comments
 comments:
-  provider               : false # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider: false # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
 
 # Search
-search                   : true
-search_full_content      : false
-search_provider          : "lunr" # lunr (default), algolia, google
+search: true
+search_full_content: false
+search_provider: "lunr" # lunr (default), algolia, google
 
 # Analytics
 analytics:
-  provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider: "google" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : "UA-XXXXXXXX-X" # replace with your Google Analytics tracking ID
-    anonymize_ip         : true # true, false (default)
+    tracking_id: "UA-XXXXXXXX-X" # replace with your Google Analytics tracking ID
+    anonymize_ip: true # true, false (default)
 
 # Site Author
 author:
-  name             : "James Winslow"
-  avatar           : "/assets/images/bio-photo.jpg" # path of avatar image
-  bio              : "I am a Data Scientist with a passion for solving complex problems using data-driven approaches."
-  location         : "City, Country"
-  email            : "email@example.com"
+  name: "James Winslow"
+  avatar: "/assets/images/bio-photo.jpg" # path of avatar image
+  bio: "I am a Data Scientist with a passion for solving complex problems using data-driven approaches."
+  location: "City, Country"
+  email: "email@example.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
