@@ -1,12 +1,25 @@
-# main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "Home"
+    url: /
+    external: false
+    icon: fas fa-home
+  - title: "About"
+    url: /about/
+    external: false
+    icon: fas fa-user
+  - title: "Projects"
+    url: /projects/
+    external: false
+    icon: fas fa-project-diagram
+  - title: "Blog"
+    url: /blog/
+    external: false
+    icon: fas fa-blog
+  - title: "Resume"
+    url: /resume/
+    external: false
+    icon: fas fa-file-alt
+  - title: "Contact"
+    url: /contact/
+    external: false
+    icon: fas fa-envelope
