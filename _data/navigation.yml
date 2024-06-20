@@ -11,10 +11,6 @@ main:
     url: /projects/
     external: false
     icon: fas fa-project-diagram
-  - title: "Blog"
-    url: /blog/
-    external: false
-    icon: fas fa-blog
   - title: "Resume"
     url: /resume/
     external: false

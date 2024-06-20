@@ -9,10 +9,10 @@ subtitle: "Data Scientist"
 name: "James Winslow"
 description: "A Data Scientist with a passion for solving complex problems using data-driven approaches."
 url: "https://james-winslow.github.io" # the base hostname & protocol for your site
-baseurl: "" # the subpath of your site, e.g. "/blog"
+# baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "james-winslow/James-Winslow.github.io" # GitHub username/repo-name
-teaser: "/assets/images/teaser.png" # path of fallback teaser image
-logo: "/assets/images/logo.png" # path of logo image to display in the masthead
+# teaser: "/assets/images/teaser.png" # path of fallback teaser image
+# logo: "/assets/images/logo.png" # path of logo image to display in the masthead
 masthead_title: "James Winslow" # overrides the website title displayed in the masthead
 breadcrumbs: true # true, false (default)
 words_per_minute: 200
@@ -25,9 +25,7 @@ comments:
   provider: false # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
 
 # Search
-search: true
-search_full_content: false
-search_provider: "lunr" # lunr (default), algolia, google
+search: false
 
 # Analytics
 analytics:
@@ -39,33 +37,24 @@ analytics:
 # Site Author
 author:
   name: "James Winslow"
-  avatar: "/assets/images/bio-photo.jpg" # path of avatar image
+  avatar: "/assets/images/profile.jpg" # path of avatar image
   bio: "I am a Data Scientist with a passion for solving complex problems using data-driven approaches."
-  location: "City, Country"
-  email: "email@example.com"
+  location: "Seattle, WA"
+  email: "james.r.winslow@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:email@example.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://james-winslow.github.io"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/username"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/james-winslow-11a99087/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/username"
+      url: "https://github.com/james-winslow"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/username"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/username"
+      url: "https://github.com/james-winslow"
 
 # Include and Exclude Files
 include:
@@ -187,7 +176,6 @@ compress_html:
 
 # Defaults
 defaults:
-  # _posts
   - scope:
       path: ""
       type: posts
