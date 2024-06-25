@@ -1,30 +1,53 @@
-Dimension by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# James Winslow's Portfolio
 
+Welcome to my personal portfolio website. This website showcases my professional journey, projects, and contact information. It is built using a simple and clean HTML5 template.
 
-This is Dimension, a fun little one-pager with modal-ized (is that a word?) "pages"
-and a cool depth effect (click on a menu item to see what I mean). Simple, fully
-responsive, and kitted out with all the usual pre-styled elements you'd expect.
-Hope you dig it :)
+## Table of Contents
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+- [About](#about)
+- [Projects](#projects)
+- [Resume](#resume)
+- [Contact](#contact)
+- [How to Run Locally](#how-to-run-locally)
+- [Contributing](#contributing)
+- [License](#license)
 
-(* = not included)
+## About
 
-AJ
-aj@lkn.io | @ajlkn
+Hi, I'm James Winslow, a Data Scientist with a passion for solving complex problems using data-driven approaches. My journey in the field of data science and statistics has been a rich and fulfilling adventure, marked by a passion for uncovering truths through data.
 
+## Projects
 
-Credits:
+### Project 1
+- **Description**: A brief description of the project.
+- **Link**: [Learn More](#)
 
-	Demo Images:
-		Unsplash (unsplash.com)
+### Project 2
+- **Description**: A brief description of the project.
+- **Link**: [Learn More](#)
 
-	Icons:
-		Font Awesome (fontawesome.io)
+### Project 3
+- **Description**: A brief description of the project.
+- **Link**: [Learn More](#)
 
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+## Resume
+
+You can view my resume [here](assets/resume.pdf).
+
+## Contact
+
+Feel free to reach out to me via [email](mailto:james.r.winslow@gmail.com).
+
+### Social Media
+- [GitHub](https://github.com/James-Winslow)
+- [LinkedIn](https://www.linkedin.com/in/james-winslow-11a99087/)
+- [Strava](https://www.strava.com/athletes/61009372)
+
+## How to Run Locally
+
+If you want to run this project locally, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/James-Winslow/James-Winslow.github.io.git
+   cd James-Winslow.github.io
