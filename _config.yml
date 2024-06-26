@@ -1,0 +1,32 @@
+title: "James Winslow's Portfolio"
+email: "james.r.winslow@gmail.com"
+description: "A Data Scientist with a passion for solving complex problems using data-driven approaches."
+baseurl: "" # the subpath of your site, e.g., /blog
+url: "http://localhost:4000" # the base hostname & protocol for your site
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  toc_levels: 1..6
+  smart_quotes: lsquo, rsquo, ldquo, rdquo
+  entity_output: as_char
+  enable_coderay: false
+
+# Logging configuration
+logging:
+  - "warn"
+
+# Additional Configuration
+github_username: James-Winslow
+linkedin_username: james-winslow-11a99087
+strava_username: 61009372
