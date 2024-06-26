@@ -8,9 +8,6 @@ Welcome to my personal portfolio website. This website showcases my professional
 - [Projects](#projects)
 - [Resume](#resume)
 - [Contact](#contact)
-- [How to Run Locally](#how-to-run-locally)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## About
 
@@ -43,11 +40,3 @@ Feel free to reach out to me via [email](mailto:james.r.winslow@gmail.com).
 - [LinkedIn](https://www.linkedin.com/in/james-winslow-11a99087/)
 - [Strava](https://www.strava.com/athletes/61009372)
 
-## How to Run Locally
-
-If you want to run this project locally, follow these steps:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/James-Winslow/James-Winslow.github.io.git
-   cd James-Winslow.github.io
