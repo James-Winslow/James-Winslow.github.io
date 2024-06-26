@@ -1485,6 +1485,19 @@ input, select, textarea {
 
 /* Main */
 
+/* Main Page Overlay */
+#bg:after {
+    background-image: url("assets/images/new-bg.jpg");
+}
+
+/* Header Images for each tab */
+#header img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+
 	#main {
 		-moz-flex-grow: 1;
 		-webkit-flex-grow: 1;
