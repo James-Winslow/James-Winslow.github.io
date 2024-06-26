@@ -1,30 +1,25 @@
-Dimension by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# James Winslow's Portfolio
 
+Welcome to my personal portfolio website! This site showcases my journey as a Data Scientist, highlighting my projects, experience, and skills.
 
-This is Dimension, a fun little one-pager with modal-ized (is that a word?) "pages"
-and a cool depth effect (click on a menu item to see what I mean). Simple, fully
-responsive, and kitted out with all the usual pre-styled elements you'd expect.
-Hope you dig it :)
+## About Me
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+I am a Data Scientist based in the Seattle area with a passion for solving complex problems using data-driven approaches. My background in Mathematics and Biology, combined with my experience in public health and biostatistics, has equipped me with a solid foundation in quantitative analysis and scientific research.
 
-(* = not included)
+## Sections
 
-AJ
-aj@lkn.io | @ajlkn
+- **Intro**: A brief introduction about myself.
+- **Work**: Details about my key projects and professional achievements.
+- **About**: Information about my background, experience, and what drives me.
+- **Resume**: A link to view my resume.
+- **Connect**: How to get in touch with me.
 
+## Links
 
-Credits:
+- [GitHub](https://github.com/James-Winslow)
+- [LinkedIn](https://www.linkedin.com/in/james-winslow-11a99087/)
+- [Strava](https://www.strava.com/athletes/61009372)
 
-	Demo Images:
-		Unsplash (unsplash.com)
+---
 
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+© 2024 James Winslow. All rights reserved.
