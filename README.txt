@@ -1,42 +1,25 @@
 # James Winslow's Portfolio
 
-Welcome to my personal portfolio website. This website showcases my professional journey, projects, and contact information. It is built using a simple and clean HTML5 template.
+Welcome to my personal portfolio website! This site showcases my journey as a Data Scientist, highlighting my projects, experience, and skills.
 
-## Table of Contents
+## About Me
 
-- [About](#about)
-- [Projects](#projects)
-- [Resume](#resume)
-- [Contact](#contact)
+I am a Data Scientist based in the Seattle area with a passion for solving complex problems using data-driven approaches. My background in Mathematics and Biology, combined with my experience in public health and biostatistics, has equipped me with a solid foundation in quantitative analysis and scientific research.
 
-## About
+## Sections
 
-Hi, I'm James Winslow, a Data Scientist with a passion for solving complex problems using data-driven approaches. My journey in the field of data science and statistics has been a rich and fulfilling adventure, marked by a passion for uncovering truths through data.
+- **Intro**: A brief introduction about myself.
+- **Work**: Details about my key projects and professional achievements.
+- **About**: Information about my background, experience, and what drives me.
+- **Resume**: A link to view my resume.
+- **Connect**: How to get in touch with me.
 
-## Projects
+## Links
 
-### Project 1
-- **Description**: A brief description of the project.
-- **Link**: [Learn More](#)
-
-### Project 2
-- **Description**: A brief description of the project.
-- **Link**: [Learn More](#)
-
-### Project 3
-- **Description**: A brief description of the project.
-- **Link**: [Learn More](#)
-
-## Resume
-
-You can view my resume [here](assets/resume.pdf).
-
-## Contact
-
-Feel free to reach out to me via [email](mailto:james.r.winslow@gmail.com).
-
-### Social Media
 - [GitHub](https://github.com/James-Winslow)
 - [LinkedIn](https://www.linkedin.com/in/james-winslow-11a99087/)
 - [Strava](https://www.strava.com/athletes/61009372)
 
+---
+
+© 2024 James Winslow. All rights reserved.
