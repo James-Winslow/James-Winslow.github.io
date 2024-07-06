@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Node.js
+node_modules/
+
+# Build directories
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.swp
