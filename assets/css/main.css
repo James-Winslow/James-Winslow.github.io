@@ -1,6 +1,31 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
 
+/* --- Responsive Nav Wrapping Fix --- */
+#header nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.75em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+  }
+  
+  #header nav ul li {
+	margin: 0;
+  }
+  
+  #header nav ul li a {
+	display: block;
+	padding: 0.75em 1.25em;
+	border: solid 1px rgba(255, 255, 255, 0.25);
+	font-size: 0.8em;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-align: center;
+	white-space: nowrap;
+  }
 /*
 	Dimension by HTML5 UP
 	html5up.net | @ajlkn
