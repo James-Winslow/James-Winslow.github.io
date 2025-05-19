@@ -1663,3 +1663,14 @@ body.is-preload #bg:before {
   text-align: center;
   letter-spacing: 0.2em;
 }
+
+/* Remove vertical divider lines */
+#header > *:before {
+  display: none !important;
+}
+
+/* Move nav buttons down */
+#header nav {
+  margin-top: 1.5rem;
+}
+
