@@ -1279,9 +1279,8 @@ body.is-preload #bg:before {
 			}
 
 		#header .content {
-			border-style: solid;
-			border-color: #ffffff;
 			max-width: 100%;
+			border: none; /* Remove both top and bottom borders */
 		}
 
 			#header .content .inner {
