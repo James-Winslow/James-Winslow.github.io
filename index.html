@@ -1,13 +1,15 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>James Winslow</title>
+    <title>James Winslow | Data Scientist</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   </head>
   <body class="is-preload">
+    <!-- Background -->
+    <div id="bg"></div>
 
     <!-- Wrapper -->
     <div id="wrapper">
@@ -15,19 +17,19 @@
       <!-- Header -->
       <header id="header">
         <div class="logo">
-          <span class="icon solid fa-user"></span>
+          <span class="icon solid fa-terminal"></span>
         </div>
         <div class="content">
           <div class="inner">
             <h1>James Winslow</h1>
-            <p>Data Scientist | Storyteller | Problem Solver</p>
+            <p>Data Scientist • Biostatistician • Developer</p>
           </div>
         </div>
         <nav>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" data-link="about">About</a></li>
+            <li><a href="#projects" data-link="projects">Projects</a></li>
+            <li><a href="#contact" data-link="contact">Contact</a></li>
           </ul>
         </nav>
       </header>
@@ -37,25 +39,33 @@
 
         <!-- About -->
         <article id="about">
-          <h2 class="major">About</h2>
-          <p>Hello! I'm James, a data scientist with a passion for turning numbers into stories and building tools that matter. I specialize in statistical analysis, machine learning, and building smart, impactful applications.</p>
+          <h2 class="major">About Me</h2>
+          <span class="image main"><img src="images/me.jpg" alt="James Winslow" /></span>
+          <p>I'm a data scientist with a background in biostatistics and a deep love for storytelling through numbers. With experience spanning government, healthcare, and tech, I thrive on solving complex problems with a mix of statistical rigor and real-world curiosity. I believe in making data accessible, actionable, and — dare I say — a little bit fun.</p>
         </article>
 
         <!-- Projects -->
         <article id="projects">
           <h2 class="major">Projects</h2>
-          <p>Here are a few of my favorite data science and software projects. For more, check out my <a href="https://github.com/james-winslow" target="_blank">GitHub</a>.</p>
-          <ul>
-            <li><strong>Wedding Bingo App</strong> – Azure-hosted Python app with Flask</li>
-            <li><strong>Instagram Photo Resizer</strong> – Custom ML image padding and quality optimization</li>
-            <!-- <li><strong>Survivor NLP Project</strong> – TV show analysis using LLM categorization</li> -->
-          </ul>
+          <p>Check out some of my featured projects below:</p>
+
+          <h3>📸 Instagram Photo Resizer & Quality Optimizer</h3>
+          <p>A Python-based image processing tool that resizes photos of mixed aspect ratios for Instagram's carousel layout, maintaining high resolution and visual consistency using intelligent padding based on dominant colors. Deployed as an Azure web app.</p>
+
+          <h3>🎉 Wedding Bingo (Azure Web App)</h3>
+          <p>A Flask-based app that allows guests at a wedding to play themed bingo on their phones. Designed, deployed, and styled to be responsive and festive, hosted for free on Azure. Highlights include JavaScript interactivity, CSS customization, and cloud deployment.</p>
+
+          <!--
+          <h3>🪢 Survivor Strategy Tracker (Coming Soon)</h3>
+          <p>We're building a tool that uses transcripts and data from Survivor episodes to explore alliance dynamics, vote patterns, and player behavior using LLMs. Stay tuned!</p>
+          -->
+
         </article>
 
         <!-- Contact -->
         <article id="contact">
           <h2 class="major">Contact</h2>
-          <form method="post" action="#">
+          <form method="post" action="https://formspree.io/f/your-form-id">
             <div class="fields">
               <div class="field half">
                 <label for="name">Name</label>
@@ -72,22 +82,22 @@
             </div>
             <ul class="actions">
               <li><input type="submit" value="Send Message" class="primary" /></li>
-              <li><input type="reset" value="Reset" /></li>
             </ul>
           </form>
+          <ul class="icons">
+            <li><a href="https://github.com/james-winslow" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="https://www.linkedin.com/in/james-winslow" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+          </ul>
         </article>
 
       </div>
 
       <!-- Footer -->
       <footer id="footer">
-        <p class="copyright">&copy; James Winslow. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+        <p class="copyright">&copy; James Winslow. Design based on Dimension by HTML5 UP.</p>
       </footer>
 
     </div>
-
-    <!-- BG -->
-    <div id="bg"></div>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
