@@ -1,0 +1,20 @@
+current directory: /Users/jameswinslow/Documents/Projects/WebDevelopment/James-Winslow.github.io/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20250601-32822-lv3m1.rb extconf.rb
+creating Makefile
+
+current directory: /Users/jameswinslow/Documents/Projects/WebDevelopment/James-Winslow.github.io/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
+make "DESTDIR=" clean
+
+current directory: /Users/jameswinslow/Documents/Projects/WebDevelopment/James-Winslow.github.io/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
+make "DESTDIR="
+compiling ./libsass/src/ast.cpp
+In file included from ./libsass/src/ast.cpp:3:
+In file included from ./libsass/src/sass.hpp:55:
+In file included from ./libsass/src/memory.hpp:8:
+./libsass/src/memory/allocator.hpp:8:10: fatal error: 'vector' file not found
+    8 | #include <vector>
+      |          ^~~~~~~~
+1 error generated.
+make: *** [ast.o] Error 1
+
+make failed, exit code 2
