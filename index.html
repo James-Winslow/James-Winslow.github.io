@@ -454,11 +454,15 @@
     }
 
     .reveal {
-      opacity: 0;
-      transform: translateY(24px);
+      opacity: 1;
+      transform: translateY(0);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .reveal.visible {
+    .js-ready .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .js-ready .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -787,7 +791,7 @@
         <p>
           If you're working on something interesting in data, ML, or public health and want to talk, reach out. I respond to humans.
         </p>
-        <a href="mailto:james.r.winslow@gmail.com" class="btn btn-primary" style="margin-top:0.5rem;">Email Me</a>
+        <a href="/cdn-cgi/l/email-protection#cfa5aea2aabce1bde1b8a6a1bca3a0b88fa8a2aea6a3e1aca0a2" class="btn btn-primary" style="margin-top:0.5rem;">Email Me</a>
       </div>
       <div class="contact-right reveal">
         <a href="https://www.linkedin.com/in/james-winslow-11a99087/" class="contact-link" target="_blank">
@@ -814,6 +818,20 @@
 </footer>
 
 <script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => 
+  if ('IntersectionObserver' in window) {
+    document.body.classList.add('js-ready');
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  }
+</script>
+
+</body>
+</html>
