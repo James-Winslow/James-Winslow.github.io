@@ -1,82 +1,877 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>James Winslow</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>James Winslow — Data Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    :root {
+      --teal:    #2ABFBF;
+      --yellow:  #F5C842;
+      --pink:    #F27D9D;
+      --bg:      #F7F5F0;
+      --ink:     #1A1A18;
+      --ink-mid: #4A4A46;
+      --ink-low: #8A8A84;
+      --rule:    #D8D5CE;
+      --card-bg: #FFFFFF;
+      --serif:   'DM Serif Display', Georgia, serif;
+      --mono:    'DM Mono', 'Courier New', monospace;
+      --sans:    'Instrument Sans', system-ui, sans-serif;
+    }
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-user"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>James Winslow</h1>
-								<p>Data Scientist | Storyteller | Problem Solver</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#about">About</a></li>
-								<li><a href="#projects">Projects</a></li>								<li><a href="#contact">Contact</a></li>
-							</ul>
-						</nav>
-					</header>
+    html { scroll-behavior: smooth; }
 
-				<!-- Main -->
-					<div id="main">
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="Mountain Landscape" /></span>
-								<p>Hi, I’m James — a data scientist with a background in public health, biostatistics, and storytelling. I combine analytical rigor with clear communication to solve complex problems and build things that matter. I’m currently working on multiple projects that showcase my skills in Python, web development, and machine learning. Explore my work below or reach out to connect.</p>
-							</article>
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 3rem;
+      background: rgba(247,245,240,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--ink-mid);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
 
-						<!-- Projects -->
-							<article id="projects">
-								<h2 class="major">Projects</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="Mountain Summit" /></span>
-								<ul>
-									<li><a href="https://github.com/james-winslow/WeddingBingo" target="_blank">WeddingBingo: Azure Flask Web App</a></li>
-									<li><a href="https://github.com/James-Winslow/IGPhotoResizer" target="_blank">Instagram Post Optimizer: Image Resizing & Bordering Tool</a></li>
-								</ul>
-							</article>
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 8rem 3rem 4rem;
+      gap: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left { max-width: 580px; }
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--teal);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.1s forwards;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--teal);
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+      max-width: 460px;
+      margin-bottom: 2.2rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.35s forwards;
+    }
+    .hero-ctas {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.5s forwards;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.6rem;
+      border-radius: 3px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+      border: 2px solid var(--teal);
+    }
+    .btn-primary:hover { background: #229999; border-color: #229999; transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 2px solid var(--ink);
+    }
+    .btn-secondary:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<p>Feel free to reach out to me through the platforms below:</p>
-								<ul>
-									<li><a href="https://www.linkedin.com/in/james-winslow-11a99087/" target="_blank">LinkedIn</a></li>
-									<li><a href="https://github.com/james-winslow" target="_blank">GitHub</a></li>
-									<li><a href="mailto:james.r.winslow@gmail.com">Email Me</a></li>
-								</ul>
-							</article>
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeIn 1s 0.6s forwards;
+    }
+    .hero-graphic {
+      position: relative;
+      width: 340px; height: 340px;
+    }
+    .hero-graphic svg {
+      width: 100%; height: 100%;
+    }
 
-					</div>
+    /* animated orbs */
+    @keyframes orbit1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(18px,-22px)} }
+    @keyframes orbit2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-14px,18px)} }
+    @keyframes orbit3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(20px,12px)} }
+    .orb1 { animation: orbit1 7s ease-in-out infinite; }
+    .orb2 { animation: orbit2 9s ease-in-out infinite; }
+    .orb3 { animation: orbit3 6s ease-in-out infinite; }
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; James Winslow. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+    /* ── SECTIONS ── */
+    section { padding: 6rem 3rem; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--teal);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 2.5rem;
+    }
+    hr.rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin-bottom: 3rem;
+    }
 
-			</div>
+    /* ── ABOUT ── */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--ink-mid);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.3rem;
+    }
+    .about-text p strong { color: var(--ink); }
+    .about-sidebar { display: flex; flex-direction: column; gap: 2rem; }
+    .sidebar-block h4 {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-low);
+      margin-bottom: 0.6rem;
+    }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      font-size: 0.78rem;
+      font-family: var(--mono);
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+      background: var(--rule);
+      color: var(--ink-mid);
+      white-space: nowrap;
+    }
+    .tag.teal { background: #d4f4f4; color: #1a8585; }
+    .tag.yellow { background: #fdf3cc; color: #7a6010; }
+    .tag.pink { background: #fde4ec; color: #8a3050; }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    /* ── PROJECTS ── */
+    #projects { background: #EFEDE6; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--teal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .project-card:hover::before { transform: scaleX(1); }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .project-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .project-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      line-height: 1.25;
+      flex: 1;
+    }
+    .status-badge {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      margin-left: 0.8rem;
+      margin-top: 0.1rem;
+    }
+    .badge-active { background: #d4f4f4; color: #1a8585; }
+    .badge-existing { background: #fdf3cc; color: #7a6010; }
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .project-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      padding: 0.18rem 0.45rem;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      color: var(--ink-low);
+    }
+    .project-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: auto;
+    }
+    .project-link:hover { color: #229999; }
+    .project-link svg { width: 12px; height: 12px; }
 
-	</body>
+    /* ── BACKGROUND ── */
+    #background { background: var(--bg); }
+    .bg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 1.2rem;
+      padding-bottom: 2rem;
+      position: relative;
+    }
+    .timeline-dot-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .t-dot {
+      width: 10px; height: 10px;
+      background: var(--teal);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .t-line {
+      width: 1px;
+      background: var(--rule);
+      flex: 1;
+      margin-top: 4px;
+    }
+    .timeline-item:last-child .t-line { display: none; }
+    .t-content {}
+    .t-date {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-low);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.15rem;
+    }
+    .t-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+    .t-org {
+      font-size: 0.88rem;
+      color: var(--teal);
+      margin-bottom: 0.25rem;
+    }
+    .t-desc {
+      font-size: 0.83rem;
+      color: var(--ink-mid);
+      line-height: 1.55;
+    }
+
+    .edu-list, .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .edu-item h4 {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .edu-item p {
+      font-size: 0.85rem;
+      color: var(--ink-mid);
+    }
+    .pub-item {
+      border-left: 2px solid var(--yellow);
+      padding-left: 1rem;
+    }
+    .pub-item h4 {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.45;
+      margin-bottom: 0.2rem;
+    }
+    .pub-item p {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ink-low);
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--ink);
+      color: #fff;
+    }
+    #contact .section-label { color: var(--teal); }
+    #contact h2 { color: #fff; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .contact-left p {
+      color: #aaa;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .contact-left p strong { color: #fff; }
+    .contact-right { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.9rem 1.2rem;
+      border: 1px solid #333;
+      border-radius: 3px;
+      text-decoration: none;
+      color: #ccc;
+      font-size: 0.88rem;
+      transition: all 0.2s;
+    }
+    .contact-link:hover {
+      border-color: var(--teal);
+      color: #fff;
+      background: rgba(42,191,191,0.05);
+    }
+    .contact-icon {
+      width: 18px; height: 18px;
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: #555;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 3rem; }
+      .hero-right { display: none; }
+      .about-grid, .bg-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      section { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">jw.github.io</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Data Scientist &amp; Biostatistician</p>
+    <h1>James<br><em>Winslow</em></h1>
+    <p class="hero-sub">
+      I find the signal in messy data — and make it mean something. Equal parts statistician, engineer, and writer; equally at home with a causal model and a blank page.
+    </p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn btn-primary">See My Work</a>
+      <a href="#about" class="btn btn-secondary">About Me</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-graphic">
+      <svg viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background grid -->
+        <g stroke="#D8D5CE" stroke-width="0.5" opacity="0.6">
+          <line x1="0" y1="85" x2="340" y2="85"/>
+          <line x1="0" y1="170" x2="340" y2="170"/>
+          <line x1="0" y1="255" x2="340" y2="255"/>
+          <line x1="85" y1="0" x2="85" y2="340"/>
+          <line x1="170" y1="0" x2="170" y2="340"/>
+          <line x1="255" y1="0" x2="255" y2="340"/>
+        </g>
+        <!-- Data curve -->
+        <path d="M 20 260 Q 80 240 120 200 Q 160 160 180 140 Q 220 100 260 80 Q 290 65 320 60"
+              stroke="#2ABFBF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- Data points -->
+        <circle cx="20" cy="260" r="4" fill="#2ABFBF"/>
+        <circle cx="120" cy="200" r="4" fill="#2ABFBF"/>
+        <circle cx="180" cy="140" r="4" fill="#F5C842"/>
+        <circle cx="260" cy="80" r="4" fill="#2ABFBF"/>
+        <circle cx="320" cy="60" r="5" fill="#F27D9D"/>
+        <!-- Vertical guides from points -->
+        <line x1="120" y1="200" x2="120" y2="270" stroke="#D8D5CE" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="180" y1="140" x2="180" y2="270" stroke="#D8D5CE" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="260" y1="80" x2="260" y2="270" stroke="#D8D5CE" stroke-width="1" stroke-dasharray="3,3"/>
+        <!-- Floating orbs -->
+        <g class="orb1">
+          <circle cx="60" cy="80" r="28" fill="#2ABFBF" opacity="0.12"/>
+          <circle cx="60" cy="80" r="14" fill="#2ABFBF" opacity="0.2"/>
+        </g>
+        <g class="orb2">
+          <circle cx="280" cy="200" r="22" fill="#F5C842" opacity="0.15"/>
+          <circle cx="280" cy="200" r="10" fill="#F5C842" opacity="0.25"/>
+        </g>
+        <g class="orb3">
+          <circle cx="160" cy="290" r="18" fill="#F27D9D" opacity="0.15"/>
+        </g>
+        <!-- Axis labels -->
+        <text x="330" y="285" font-family="DM Mono, monospace" font-size="10" fill="#8A8A84">n</text>
+        <text x="8" y="20" font-family="DM Mono, monospace" font-size="10" fill="#8A8A84">y</text>
+        <!-- x axis -->
+        <line x1="15" y1="270" x2="330" y2="270" stroke="#4A4A46" stroke-width="1.5"/>
+        <!-- y axis -->
+        <line x1="15" y1="270" x2="15" y2="10" stroke="#4A4A46" stroke-width="1.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label reveal">About</p>
+    <h2 class="reveal">The longer version.</h2>
+    <hr class="rule">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I'm a data scientist with a background in <strong>biostatistics, public health, and mathematics</strong> — which is a roundabout way of saying I've spent a lot of time turning messy, high-stakes data into decisions that actually matter. I've built predictive models for healthcare systems, maintained clinical research pipelines for the VA, and helped government partners make sense of data they didn't know they had.
+        </p>
+        <p>
+          What makes me useful isn't just the technical range (Python, R, SQL, Bayesian modeling, causal inference, NLP) — it's that I care about <strong>communication as much as computation</strong>. A model no one understands is just expensive decoration. I write clearly, think in systems, and try to make every deliverable — whether it's a dashboard or a slide deck — as clear as the analysis behind it.
+        </p>
+        <p>
+          Outside of work, I'm somewhere on a Colorado 14er, deep in a philosophy book, or building side projects that probably cross too many genres. I believe strongly in <strong>finishing things, asking hard questions, and designing systems that actually hold up</strong> — whether that's a statistical model or a personal knowledge system.
+        </p>
+      </div>
+      <div class="about-sidebar reveal">
+        <div class="sidebar-block">
+          <h4>Technical Skills</h4>
+          <div class="tag-cloud">
+            <span class="tag teal">Python</span>
+            <span class="tag teal">R</span>
+            <span class="tag teal">SQL</span>
+            <span class="tag teal">SAS</span>
+            <span class="tag">Bayesian Modeling</span>
+            <span class="tag">Causal Inference</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Supervised ML</span>
+            <span class="tag">ETL / Pipelines</span>
+            <span class="tag">Azure</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Flask</span>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <h4>Currently Exploring</h4>
+          <div class="tag-cloud">
+            <span class="tag yellow">Time Series</span>
+            <span class="tag yellow">Transformer-based NLP</span>
+            <span class="tag yellow">Databricks</span>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <h4>Outside the Code</h4>
+          <div class="tag-cloud">
+            <span class="tag pink">Colorado 14ers</span>
+            <span class="tag pink">Stoicism</span>
+            <span class="tag pink">Wittgenstein</span>
+            <span class="tag pink">Essay Writing</span>
+            <span class="tag pink">Data Storytelling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-label reveal">Work</p>
+    <h2 class="reveal">Projects &amp; builds.</h2>
+    <hr class="rule">
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div class="project-title">AI Cover Letter Generator</div>
+          <span class="status-badge badge-existing">Existing</span>
+        </div>
+        <p class="project-desc">LLM-powered tooling that generates tailored cover letters within truthfulness constraints — no hallucinated credentials, just prompt discipline applied to job search acceleration.</p>
+        <div class="project-tags">
+          <span class="project-tag">LLM Tooling</span>
+          <span class="project-tag">Prompt Engineering</span>
+          <span class="project-tag">Python</span>
+        </div>
+        <a href="https://github.com/james-winslow" class="project-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div class="project-title">WeddingBingo: Azure Flask Web App</div>
+          <span class="status-badge badge-existing">Existing</span>
+        </div>
+        <p class="project-desc">A fully deployed Flask web app hosted on Azure — built as a fun, shareable tool and a real demonstration of end-to-end deployment, not just a local script.</p>
+        <div class="project-tags">
+          <span class="project-tag">Flask</span>
+          <span class="project-tag">Azure</span>
+          <span class="project-tag">Deployment</span>
+          <span class="project-tag">UI</span>
+        </div>
+        <a href="https://github.com/james-winslow/WeddingBingo" class="project-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div class="project-title">Drag Race All Stars 10 Tracker</div>
+          <span class="status-badge badge-active">Active</span>
+        </div>
+        <p class="project-desc">An interactive leaderboard app for tracking RuPaul's Drag Race All Stars 10 — weekly updates, robust to format changes, built with Flask and interactive UX in mind.</p>
+        <div class="project-tags">
+          <span class="project-tag">Flask</span>
+          <span class="project-tag">Interactive UX</span>
+          <span class="project-tag">Web App</span>
+        </div>
+        <a href="https://github.com/james-winslow" class="project-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div class="project-title">Instagram Photo Optimizer</div>
+          <span class="status-badge badge-existing">Existing</span>
+        </div>
+        <p class="project-desc">Image resizing and quality optimization tool built around Instagram's format requirements. Includes a testing framework and planned app deployment.</p>
+        <div class="project-tags">
+          <span class="project-tag">Image Processing</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Testing</span>
+        </div>
+        <a href="https://github.com/James-Winslow/IGPhotoResizer" class="project-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div class="project-title">Spotify Genre Analyzer</div>
+          <span class="status-badge badge-existing">Existing</span>
+        </div>
+        <p class="project-desc">ETL pipeline + analysis tool for personal Spotify data. Produces genre breakdowns, listening pattern reports, and visualizations — data storytelling applied to something personal.</p>
+        <div class="project-tags">
+          <span class="project-tag">ETL</span>
+          <span class="project-tag">Data Viz</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Analysis</span>
+        </div>
+        <a href="https://github.com/james-winslow" class="project-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div class="project-title">Survivor LLM Categorization</div>
+          <span class="status-badge badge-existing">Existing</span>
+        </div>
+        <p class="project-desc">NLP pipeline using LLMs to categorize Survivor episode data. Handles data ingestion, structured output, and an expandable architecture designed to grow with the dataset.</p>
+        <div class="project-tags">
+          <span class="project-tag">NLP</span>
+          <span class="project-tag">LLM</span>
+          <span class="project-tag">Data Ingestion</span>
+          <span class="project-tag">Pipeline</span>
+        </div>
+        <a href="https://github.com/james-winslow" class="project-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div class="project-title">WNBA vs NBA: Comparative Analysis</div>
+          <span class="status-badge badge-existing">Existing</span>
+        </div>
+        <p class="project-desc">Sports analytics project comparing performance metrics across the WNBA and NBA. Emphasis on data storytelling — not just charts, but a narrative grounded in the numbers.</p>
+        <div class="project-tags">
+          <span class="project-tag">Sports Analytics</span>
+          <span class="project-tag">Storytelling</span>
+          <span class="project-tag">Python</span>
+        </div>
+        <a href="https://github.com/james-winslow" class="project-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-card-top">
+          <div class="project-title">Distributions: A Math Writing Project</div>
+          <span class="status-badge badge-active">Active</span>
+        </div>
+        <p class="project-desc">A long-form writing project building toward a polished PDF book on probability distributions — rigorous but readable, written for people who want to actually understand the math.</p>
+        <div class="project-tags">
+          <span class="project-tag">LaTeX</span>
+          <span class="project-tag">Math Writing</span>
+          <span class="project-tag">Pedagogy</span>
+        </div>
+        <a href="https://github.com/james-winslow" class="project-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section id="background">
+  <div class="section-inner">
+    <p class="section-label reveal">Background</p>
+    <h2 class="reveal">Where I've been.</h2>
+    <hr class="rule">
+    <div class="bg-grid">
+      <div>
+        <h3 style="font-family:var(--serif);font-size:1.4rem;margin-bottom:1.8rem;" class="reveal">Experience</h3>
+        <div class="timeline reveal">
+
+          <div class="timeline-item">
+            <div class="timeline-dot-col"><div class="t-dot"></div><div class="t-line"></div></div>
+            <div class="t-content">
+              <p class="t-date">Apr 2022 – Jul 2023</p>
+              <p class="t-title">Data Scientist</p>
+              <p class="t-org">Arisant</p>
+              <p class="t-desc">Data engineering, pipeline development, dashboards, and analytics enablement for government partners.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot-col"><div class="t-dot"></div><div class="t-line"></div></div>
+            <div class="t-content">
+              <p class="t-date">Nov 2020 – Dec 2021</p>
+              <p class="t-title">Data Scientist</p>
+              <p class="t-org">University of Colorado School of Medicine</p>
+              <p class="t-desc">Healthcare analytics and predictive modeling in applied clinical settings.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot-col"><div class="t-dot"></div><div class="t-line"></div></div>
+            <div class="t-content">
+              <p class="t-date">Mar 2019 – May 2020</p>
+              <p class="t-title">Biostatistician</p>
+              <p class="t-org">VA Eastern Colorado Health Care System</p>
+              <p class="t-desc">Clinical research support: study design, analysis plans, manuscript preparation, and data warehousing.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot-col"><div class="t-dot"></div><div class="t-line"></div></div>
+            <div class="t-content">
+              <p class="t-date">Earlier</p>
+              <p class="t-title">Community Outreach Coordinator</p>
+              <p class="t-org">Tennessee Justice Center</p>
+              <p class="t-desc">Patient advocacy, policy work, and community organizing. Learned to make a case with constrained resources and real stakes.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-family:var(--serif);font-size:1.4rem;margin-bottom:1.8rem;" class="reveal">Education</h3>
+        <div class="edu-list reveal" style="margin-bottom:3rem;">
+          <div class="edu-item">
+            <h4>MPH — Biostatistics</h4>
+            <p>University of Colorado Denver</p>
+            <p style="font-size:0.78rem;color:var(--ink-low);margin-top:0.2rem;">CU School of Public Health</p>
+          </div>
+          <div class="edu-item">
+            <h4>BS Mathematics &amp; BA Biology</h4>
+            <p>Gonzaga University</p>
+          </div>
+        </div>
+
+        <h3 style="font-family:var(--serif);font-size:1.4rem;margin-bottom:1.4rem;" class="reveal">Publications</h3>
+        <div class="pub-list reveal">
+          <div class="pub-item">
+            <h4>Snails from heavy-metal polluted environments have reduced sensitivity to carbon dioxide-induced acidity</h4>
+            <p>Springerplus · 2015</p>
+          </div>
+          <div class="pub-item">
+            <h4>Carbon dioxide enrichment alters predator avoidance and sex determination but only sex is mediated by GABA<sub>A</sub> receptors</h4>
+            <p>Hydrobiologia · 2018</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label reveal">Contact</p>
+    <h2 class="reveal">Let's talk.</h2>
+    <hr class="rule" style="border-color:#333;">
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <p>
+          I'm <strong>actively looking for my next role</strong> — data scientist, senior data scientist, or research analyst positions where the problems are hard and the work actually matters.
+        </p>
+        <p>
+          If you're working on something interesting in data, ML, or public health and want to talk, reach out. I respond to humans.
+        </p>
+        <a href="mailto:james.r.winslow@gmail.com" class="btn btn-primary" style="margin-top:0.5rem;">Email Me</a>
+      </div>
+      <div class="contact-right reveal">
+        <a href="https://www.linkedin.com/in/james-winslow-11a99087/" class="contact-link" target="_blank">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/james-winslow" class="contact-link" target="_blank">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:james.r.winslow@gmail.com" class="contact-link">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          james.r.winslow@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 James Winslow — Denver, CO</span>
+  <span>Built with intent.</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
 </html>
