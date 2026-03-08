@@ -431,6 +431,119 @@
       flex-shrink: 0;
     }
 
+    /* ── INVESTIGATING ── */
+    #investigating { background: var(--bg); }
+    .inv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+      gap: 2rem;
+    }
+    .inv-card {
+      background: var(--card-bg);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .inv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 3px;
+      background: var(--teal);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.3s;
+    }
+    .inv-card:hover::before { transform: scaleY(1); }
+    .inv-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .inv-card.accent-yellow::before { background: var(--yellow); }
+    .inv-card.accent-pink::before   { background: var(--pink); }
+    .inv-question {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+    .inv-why {
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+      border-left: 2px solid var(--rule);
+      padding-left: 0.9rem;
+      font-style: italic;
+    }
+    .inv-block-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-low);
+      margin-bottom: 0.5rem;
+    }
+    .inv-reading { display: flex; flex-direction: column; gap: 0.6rem; }
+    .inv-book {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .inv-book-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .inv-book-note {
+      font-size: 0.78rem;
+      color: var(--ink-mid);
+      line-height: 1.5;
+    }
+    .inv-connected {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--teal);
+      margin-top: auto;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--rule);
+    }
+    .inv-connected.yellow { color: #9a7a10; }
+    .inv-connected.pink   { color: #a0446a; }
+    .inv-status {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #d4f4f4;
+      color: #1a8585;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    .inv-status.planned { background: #fdf3cc; color: #7a6010; }
+
+    /* project connection tags */
+    .project-connection {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-low);
+      margin-top: 0.2rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule);
+    }
+    .project-connection span { color: var(--teal); }
+
     /* ── FOOTER ── */
     footer {
       background: #111;
@@ -473,6 +586,7 @@
       #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 3rem; }
       .hero-right { display: none; }
       .about-grid, .bg-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .inv-grid { grid-template-columns: 1fr; }
       section { padding: 4rem 1.5rem; }
     }
   </style>
@@ -485,6 +599,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#investigating">Investigating</a></li>
     <li><a href="#background">Background</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -496,7 +611,7 @@
     <p class="hero-eyebrow">Data Scientist &amp; Biostatistician</p>
     <h1>James<br><em>Winslow</em></h1>
     <p class="hero-sub">
-      I find the signal in messy data — and make it mean something. Equal parts statistician, engineer, and writer; equally at home with a causal model and a blank page.
+      I find the signal in messy data — and make it mean something. Trained as a statistician, working as a data scientist, and trying to get better at both.
     </p>
     <div class="hero-ctas">
       <a href="#projects" class="btn btn-primary">See My Work</a>
@@ -561,49 +676,57 @@
     <div class="about-grid">
       <div class="about-text reveal">
         <p>
-          I'm a data scientist with a background in <strong>biostatistics, public health, and mathematics</strong> — which is a roundabout way of saying I've spent a lot of time turning messy, high-stakes data into decisions that actually matter. I've built predictive models for healthcare systems, maintained clinical research pipelines for the VA, and helped government partners make sense of data they didn't know they had.
+          I'm a data scientist with a background in <strong>biostatistics, public health, and mathematics</strong>. Most of my professional work lives at the intersection of analytical rigor and practical communication — building pipelines, writing SQL, automating reports, and making sure the analysis actually reaches the people who need it.
         </p>
         <p>
-          What makes me useful isn't just the technical range (Python, R, SQL, Bayesian modeling, causal inference, NLP) — it's that I care about <strong>communication as much as computation</strong>. A model no one understands is just expensive decoration. I write clearly, think in systems, and try to make every deliverable — whether it's a dashboard or a slide deck — as clear as the analysis behind it.
+          My training is in statistics and formal methods — regression, survival analysis, study design, probabilistic thinking — but my day-to-day tends toward the engineering side: getting data clean, getting it moving, and getting it understood. I care about both halves. <strong>A pipeline that nobody trusts is just as useless as a model nobody can explain.</strong>
         </p>
         <p>
-          Outside of work, I'm somewhere on a Colorado 14er, deep in a philosophy book, or building side projects that probably cross too many genres. I believe strongly in <strong>finishing things, asking hard questions, and designing systems that actually hold up</strong> — whether that's a statistical model or a personal knowledge system.
+          Outside of work I'm hiking Colorado's fourteeners, reading about the history and philosophy of probability, and working on side projects that let me apply statistical thinking to things I'm genuinely curious about — mountains, sports, human behavior. I'm trying to grow in the direction of machine learning depth and applied AI, and I prefer being honest about where I am in that process over performing expertise I haven't earned yet.
         </p>
       </div>
       <div class="about-sidebar reveal">
         <div class="sidebar-block">
-          <h4>Technical Skills</h4>
+          <h4>Daily Tools</h4>
           <div class="tag-cloud">
             <span class="tag teal">Python</span>
             <span class="tag teal">R</span>
             <span class="tag teal">SQL</span>
-            <span class="tag teal">SAS</span>
-            <span class="tag">Bayesian Modeling</span>
-            <span class="tag">Causal Inference</span>
-            <span class="tag">NLP</span>
-            <span class="tag">Supervised ML</span>
-            <span class="tag">ETL / Pipelines</span>
-            <span class="tag">Azure</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Flask</span>
           </div>
         </div>
         <div class="sidebar-block">
-          <h4>Currently Exploring</h4>
+          <h4>Statistical Training</h4>
           <div class="tag-cloud">
-            <span class="tag yellow">Time Series</span>
-            <span class="tag yellow">Transformer-based NLP</span>
-            <span class="tag yellow">Databricks</span>
+            <span class="tag">Regression &amp; GLMs</span>
+            <span class="tag">Survival Analysis</span>
+            <span class="tag">Study Design</span>
+            <span class="tag">Bayesian Inference</span>
+            <span class="tag">Hypothesis Testing</span>
           </div>
         </div>
         <div class="sidebar-block">
-          <h4>Outside the Code</h4>
+          <h4>Data Engineering</h4>
+          <div class="tag-cloud">
+            <span class="tag">ETL &amp; Pipelines</span>
+            <span class="tag">Reporting Automation</span>
+            <span class="tag">Database Mapping</span>
+            <span class="tag">NLP / Text Processing</span>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <h4>Building Toward</h4>
+          <div class="tag-cloud">
+            <span class="tag yellow">ML Depth</span>
+            <span class="tag yellow">Applied AI</span>
+            <span class="tag yellow">Software Engineering Practices</span>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <h4>Beyond Work</h4>
           <div class="tag-cloud">
             <span class="tag pink">Colorado 14ers</span>
-            <span class="tag pink">Stoicism</span>
-            <span class="tag pink">Wittgenstein</span>
-            <span class="tag pink">Essay Writing</span>
-            <span class="tag pink">Data Storytelling</span>
+            <span class="tag pink">Philosophy of Language</span>
+            <span class="tag pink">History of Probability</span>
           </div>
         </div>
       </div>
@@ -632,6 +755,7 @@
           <span class="project-tag">Data Viz</span>
         </div>
         <a href="https://github.com/James-Winslow/wnba-vs-nba" class="project-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+        <p class="project-connection">↳ Connected to: <span>How do humans interpret evidence and risk?</span></p>
       </div>
 
       <div class="project-card reveal">
@@ -662,13 +786,147 @@
           <span class="project-tag">Testing</span>
         </div>
         <a href="https://github.com/James-Winslow/IGPhotoResizer" class="project-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M4 2h6v6"/></svg></a>
+        <p class="project-connection">↳ Connected to: <span>How should we reason under uncertainty?</span></p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- BACKGROUND -->
+<!-- INVESTIGATING -->
+<section id="investigating">
+  <div class="section-inner">
+    <p class="section-label reveal">Thinking</p>
+    <h2 class="reveal">What I'm investigating.</h2>
+    <hr class="rule">
+    <p class="reveal" style="font-size:1rem;color:var(--ink-mid);max-width:620px;margin-bottom:2.5rem;line-height:1.8;">
+      These are questions I'm working through — through reading, thinking, and eventually building. Some of the books listed I'm in the middle of; others are on the near-term list. I'm including them here because I think it's more honest to show the shape of someone's curiosity than to wait until everything is finished.
+    </p>
+    <div class="inv-grid">
+
+      <div class="inv-card reveal">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
+          <p class="inv-question">How did probability become the language of modern society?</p>
+          <span class="inv-status">Reading</span>
+        </div>
+        <p class="inv-why">
+          I spend my days working with data that informs decisions. But I rarely stop to ask: how did we arrive at a world where numbers are trusted to govern? This question traces the historical arc from gambling problems in the 17th century to the statistical infrastructure of modern states — and it's changing how I think about my own work.
+        </p>
+        <div>
+          <p class="inv-block-label">Reading</p>
+          <div class="inv-reading">
+            <div class="inv-book">
+              <span class="inv-book-title">Ian Hacking — The Emergence of Probability</span>
+              <span class="inv-book-note">How probability emerged as a dual concept — epistemic and frequentist — and why that tension still matters today.</span>
+            </div>
+            <div class="inv-book">
+              <span class="inv-book-title">Theodore Porter — Trust in Numbers</span>
+              <span class="inv-book-note">Why quantification became the language of objectivity in public life, and what that costs us in terms of judgment and nuance.</span>
+            </div>
+            <div class="inv-book">
+              <span class="inv-book-title">Alain Desrosières — The Politics of Large Numbers</span>
+              <span class="inv-book-note">A sociological history of statistics as a tool of state governance — how categories get built and who builds them.</span>
+            </div>
+            <div class="inv-book">
+              <span class="inv-book-title">Lorraine Daston — Classical Probability in the Enlightenment</span>
+              <span class="inv-book-note">The philosophical foundations of probability before it became a technocratic tool.</span>
+            </div>
+          </div>
+        </div>
+        <p class="inv-connected">↳ Connecting to: a long-term writing project on probability &amp; statistics</p>
+      </div>
+
+      <div class="inv-card accent-yellow reveal">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
+          <p class="inv-question">How should we reason under uncertainty?</p>
+          <span class="inv-status">Reading</span>
+        </div>
+        <p class="inv-why">
+          This is the question underneath most of my statistical training. I learned frequentist methods formally, but have always been skeptical of how mechanically they get applied. Bayesians and frequentists have been arguing for a century, and the stakes are real: how you reason about evidence shapes which treatments get approved, which policies get funded, which risks get dismissed. I want to actually understand the debate, not just pick a side.
+        </p>
+        <div>
+          <p class="inv-block-label">Reading</p>
+          <div class="inv-reading">
+            <div class="inv-book">
+              <span class="inv-book-title">E.T. Jaynes — Probability Theory: The Logic of Science</span>
+              <span class="inv-book-note">The definitive Bayesian manifesto — probability as an extension of logic, not a frequency count. Technically demanding but philosophically clarifying.</span>
+            </div>
+            <div class="inv-book">
+              <span class="inv-book-title">Deborah Mayo — Statistical Inference as Severe Testing</span>
+              <span class="inv-book-note">A rigorous defense of error-statistical reasoning and a sharp critique of both Bayesian and naïve frequentist approaches.</span>
+            </div>
+            <div class="inv-book">
+              <span class="inv-book-title">Karl Popper — The Logic of Scientific Discovery</span>
+              <span class="inv-book-note">Falsifiability as the criterion of scientific knowledge — the foundation for thinking about what evidence actually tests.</span>
+            </div>
+            <div class="inv-book">
+              <span class="inv-book-title">Richard Jeffrey — The Logic of Decision</span>
+              <span class="inv-book-note">Decision theory as the practical extension of probabilistic reasoning — what to do when you can't be certain.</span>
+            </div>
+          </div>
+        </div>
+        <p class="inv-connected yellow">↳ Connecting to: statistical methods study; long-term modeling work</p>
+      </div>
+
+      <div class="inv-card reveal">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
+          <p class="inv-question">How do humans actually interpret evidence and risk?</p>
+          <span class="inv-status">Reading</span>
+        </div>
+        <p class="inv-why">
+          Statistical evidence rarely speaks for itself. The same risk figure lands very differently depending on who is reading it, in what cultural context, and with what emotional stakes. I came to this question through public health — where the gap between what the data says and what people do with it is often enormous — and it's stayed with me.
+        </p>
+        <div>
+          <p class="inv-block-label">Reading</p>
+          <div class="inv-reading">
+            <div class="inv-book">
+              <span class="inv-book-title">Gerd Gigerenzer — Reckoning with Risk</span>
+              <span class="inv-book-note">How statistical illiteracy affects medical decisions — and how better communication of uncertainty could save lives. Directly relevant to my public health background.</span>
+            </div>
+            <div class="inv-book">
+              <span class="inv-book-title">Ulrich Beck — Risk Society</span>
+              <span class="inv-book-note">How modern societies organize themselves around manufactured risks — and why risk perception is always political, not just technical.</span>
+            </div>
+            <div class="inv-book">
+              <span class="inv-book-title">Dan Kahan — Cultural Cognition research</span>
+              <span class="inv-book-note">Why people with access to the same data reach opposite conclusions — identity-protective cognition as an empirical phenomenon, not a moral failing.</span>
+            </div>
+          </div>
+        </div>
+        <p class="inv-connected">↳ Connecting to: public health background; WNBA project; future writing</p>
+      </div>
+
+      <div class="inv-card accent-pink reveal">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
+          <p class="inv-question">Can I predict when a Colorado 14er becomes accessible?</p>
+          <span class="inv-status planned">Planned</span>
+        </div>
+        <p class="inv-why">
+          I've been hiking Colorado's fourteeners for years. Summit windows are notoriously hard to judge — snowpack, aspect, elevation, and weather patterns interact in ways that even experienced mountaineers get wrong. I want to build a probabilistic model that estimates accessibility windows for specific peaks, connecting time-series environmental data to real mountain conditions. This project sits at the intersection of everything: mountain travel, data engineering, and prediction under genuine uncertainty.
+        </p>
+        <div>
+          <p class="inv-block-label">Technical threads</p>
+          <div class="inv-reading">
+            <div class="inv-book">
+              <span class="inv-book-title">Time-series forecasting</span>
+              <span class="inv-book-note">SNOTEL snowpack data, NOAA weather records, and elevation-adjusted temperature modeling as inputs.</span>
+            </div>
+            <div class="inv-book">
+              <span class="inv-book-title">Probabilistic prediction</span>
+              <span class="inv-book-note">Output as a probability distribution over accessibility windows — not a single point estimate, because mountains don't give you certainty.</span>
+            </div>
+            <div class="inv-book">
+              <span class="inv-book-title">Data visualization</span>
+              <span class="inv-book-note">Peak-by-peak condition maps; seasonal accessibility calendars; uncertainty bands that actually communicate risk.</span>
+            </div>
+          </div>
+        </div>
+        <p class="inv-connected pink">↳ Connects: reasoning under uncertainty · environmental data · Colorado exploration</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 <section id="background">
   <div class="section-inner">
     <p class="section-label reveal">Background</p>
@@ -685,7 +943,17 @@
               <p class="t-date">Aug 2025 – Present</p>
               <p class="t-title">Data Scientist</p>
               <p class="t-org">FirstBank</p>
-              <p class="t-desc">Fraud analytics, operational reporting, and audit-ready data products supporting risk strategy, regulatory compliance, and executive decision-making. Built production pipelines replacing manual workflows, led end-to-end dispute rate redesign, and developed NLP governance frameworks for CX survey analysis.</p>
+              <p class="t-desc">SQL-heavy fraud analytics and operational reporting in a regulated banking environment. Day-to-day work includes building and maintaining ETL pipelines, automating reporting workflows that replaced manual processes, ad hoc NLP and text analysis, and database mapping and documentation. Work is audit-ready by design — deterministic, reproducible, and clearly documented.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot-col"><div class="t-dot"></div><div class="t-line"></div></div>
+            <div class="t-content">
+              <p class="t-date">Sep 2024 – Aug 2025</p>
+              <p class="t-title">Letter Carrier</p>
+              <p class="t-org">USPS</p>
+              <p class="t-desc">Full-responsibility route delivery — 8–10 miles daily, independent problem-solving, tight time accountability, and direct communication with supervisors when anything went sideways. Took a step back from the screen intentionally. No regrets.</p>
             </div>
           </div>
 
@@ -786,12 +1054,12 @@
     <div class="contact-grid">
       <div class="contact-left reveal">
         <p>
-          I'm <strong>actively looking for my next role</strong> — data scientist, senior data scientist, or research analyst positions where the problems are hard and the work actually matters.
+          I'm <strong>actively looking for my next role</strong> — data scientist or research analyst positions where there's real analytical work to do and room to grow into deeper ML and modeling over time.
         </p>
         <p>
-          If you're working on something interesting in data, ML, or public health and want to talk, reach out. I respond to humans.
+          I'm based in Denver and open to remote or hybrid. If something here resonates or you just want to talk about data, statistics, or fourteeners, feel free to reach out.
         </p>
-        <a href="/cdn-cgi/l/email-protection#cfa5aea2aabce1bde1b8a6a1bca3a0b88fa8a2aea6a3e1aca0a2" class="btn btn-primary" style="margin-top:0.5rem;">Email Me</a>
+        <a href="/cdn-cgi/l/email-protection#bad0dbd7dfc994c894cdd3d4c9d6d5cdfaddd7dbd3d694d9d5d7" class="btn btn-primary" style="margin-top:0.5rem;">Email Me</a>
       </div>
       <div class="contact-right reveal">
         <a href="https://www.linkedin.com/in/james-winslow-11a99087/" class="contact-link" target="_blank">
@@ -802,9 +1070,9 @@
           <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           GitHub
         </a>
-        <a href="mailto:james.r.winslow@gmail.com" class="contact-link">
+        <a href="/cdn-cgi/l/email-protection#771d161a1204590559001e19041b180037101a161e1b5914181a" class="contact-link">
           <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          james.r.winslow@gmail.com
+          <span class="__cf_email__" data-cfemail="9df7fcf0f8eeb3efb3eaf4f3eef1f2eaddfaf0fcf4f1b3fef2f0">[email&#160;protected]</span>
         </a>
       </div>
     </div>
