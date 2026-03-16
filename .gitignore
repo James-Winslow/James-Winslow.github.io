@@ -14,3 +14,12 @@ build/
 # Temporary files
 *.tmp
 *.swp
+
+# Jekyll / Ruby
+_site/
+.jekyll-cache/
+.bundle/
+vendor/
+
+# macOS (everywhere)
+**/.DS_Store

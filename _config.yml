@@ -1,0 +1,12 @@
+# _config.yml
+title: "Thought Garden"
+description: "Daily notes & progress updates"
+baseurl: ""  
+url: "https://James-Winslow.github.io"
+
+# Tell Jekyll to leave these folders/files alone:
+exclude:
+  - resume.pdf
+  - prompt-library.html
+  - README.txt
+  # (plus any other static files/folders your site uses that you don't want Jekyll to touch)
